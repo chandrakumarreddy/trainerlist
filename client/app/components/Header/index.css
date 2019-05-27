@@ -1,0 +1,22 @@
+.navbar-custom {
+	background: darkkhaki !important;
+	padding: 0 20px;
+}
+.button-transparent-brand {
+	font-weight: bold;
+	letter-spacing: 1px;
+	font-size: 30px;
+	color: #000 !important;
+	padding: 0 20px;
+}
+a:hover {
+	color: #000 !important;
+}
+.button-transparent {
+	color: #000 !important;
+	padding: 0 20px;
+}
+
+.button-transparent:hover {
+	background: transparent !important;
+}

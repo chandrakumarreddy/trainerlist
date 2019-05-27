@@ -1,0 +1,33 @@
+.Home {
+	padding: 40px 0;
+}
+.Home-wrapper {
+	width: 50%;
+	margin: auto;
+}
+.department,
+.emailer {
+	display: grid;
+	grid-template-columns: 1fr 3fr;
+	margin-top: 30px;
+}
+
+.email {
+	width: 75%;
+}
+
+.submit-email {
+	width: 100%;
+	margin-top: 20px;
+}
+
+.center {
+	text-align: center;
+}
+
+.error {
+	color: red;
+}
+.success {
+	color: green;
+}

@@ -1,0 +1,40 @@
+.card_block {
+  padding: 10px 0;
+}
+
+.header_block {
+  display: block !important;
+}
+
+.header_title_block {
+  font-size: 25px;
+  font-style: italic;
+}
+
+.header_edit {
+  float: right;
+  margin-right: 15px;
+  margin-top: 16px;
+}
+
+.edit {
+  font-size: 21px;
+}
+
+.header_delete {
+  font-size: 20px;
+  border: none;
+  background: none;
+}
+.header_delete:focus,
+.header_delete:hover {
+  outline: none;
+  cursor: pointer;
+}
+
+.image_profileList {
+  width: 35%;
+  margin: auto;
+  display: block;
+  border-radius: 50%;
+}

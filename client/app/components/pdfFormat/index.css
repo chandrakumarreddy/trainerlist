@@ -1,0 +1,67 @@
+.legend-update-color {
+  color: #4c9eab;
+}
+
+.edit-image {
+  border-radius: 50%;
+  width: 16%;
+}
+
+.editors {
+  margin-top: 10px;
+}
+
+.text-editors {
+  border-radius: 12px;
+  border: 2px solid #000;
+  padding: 5px;
+  margin-left: 16px;
+  width: 100%;
+}
+
+.sub-title {
+  font-weight: bold;
+  font-style: italic;
+  float: left;
+  margin-left: 30%;
+}
+
+.main-sub-title {
+  font-weight: bold;
+  font-style: italic;
+  float: right;
+  margin-left: 30%;
+  margin-top: 15px;
+}
+
+.value-title {
+  font-style: italic;
+  float: left;
+}
+
+.image_pdf {
+  width: 40%;
+  margin-left: auto;
+  border-radius: 50%;
+  display: block;
+}
+
+/* Create two equal columns that floats next to each other */
+.column-split {
+  float: left;
+  width: 30%;
+  padding: 10px;
+}
+
+.column-split1 {
+  float: left;
+  width: 60%;
+  padding: 10px;
+}
+
+/* Clear floats after the columns */
+.row-split:after {
+  content: "";
+  display: table;
+  clear: both;
+}

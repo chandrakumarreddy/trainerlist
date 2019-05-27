@@ -1,0 +1,29 @@
+.profilesearch {
+	margin-top: 20px;
+}
+
+.filter-background {
+	background-color: #4c9eab;
+	width: 100%;
+	margin: 0 auto !important;
+}
+
+.input-margin {
+	margin: 10px;
+	border-radius: 12px;
+	border: 2px solid #000;
+	padding: 5px;
+	width: 100%;
+}
+
+.searchButton {
+	margin: auto;
+	color: #000;
+	background-color: #ffffff;
+	border-radius: 10px;
+	display: grid;
+	border: 0;
+    padding: 6px;
+    width: 50%;
+    margin-top: 5%;
+}

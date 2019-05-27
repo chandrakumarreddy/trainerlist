@@ -1,0 +1,29 @@
+.registerWrapper {
+	width: 50%;
+	margin: auto;
+	padding: 40px 0;
+}
+.card-custom-top {
+	padding: 30px 0;
+}
+.label {
+	text-align: right !important;
+	width: 100px;
+	margin: auto;
+}
+.is-horizontal {
+	width: 80%;
+	margin: auto;
+}
+
+.is-horizantal-custom {
+	text-align: right;
+}
+.is-horizantal-custom .button {
+	display: unset;
+}
+.login_btn {
+    width: 46% !important;
+    margin: auto !important;
+    display: block !important;
+}
