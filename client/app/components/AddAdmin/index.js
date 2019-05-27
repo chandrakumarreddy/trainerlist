@@ -9,7 +9,9 @@ export class AddAdmin extends PureComponent {
 
     this.state = {
       email: "",
-      password: ""
+      password: "",
+      success: false,
+      error: false
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -29,8 +31,8 @@ export class AddAdmin extends PureComponent {
 
     this.props
       .addadmin(this.state)
-      .then(() => this.props.history.push("/addadmin"))
-      .catch(err => console.log(err));
+      .then(() => this.setState({ success: true, error: false }))
+      .catch(err => this.setState({ error: true, success: fase }));
   }
 
   render() {
@@ -39,11 +41,20 @@ export class AddAdmin extends PureComponent {
         <div className="card">
           <form onSubmit={this.handleSubmit}>
             <div className="content card-custom-top">
-              {/* <div className="field is-horizontal">
-                <div className="field-label is-normal span_placement">
-                  <span>Successfully Added</span>
+              {this.state.success && (
+                <div className="field is-horizontal">
+                  <div className="field-label is-normal span_placement registerWrapper-success">
+                    <span>Successfully Added</span>
+                  </div>
                 </div>
-              </div> */}
+              )}
+              {this.state.error && (
+                <div className="field is-horizontal">
+                  <div className="field-label is-normal span_placement registerWrapper-error">
+                    <span>Failed to Add</span>
+                  </div>
+                </div>
+              )}
               <div className="field is-horizontal">
                 <div className="field-label is-normal">
                   <label className="label">Email</label>

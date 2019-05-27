@@ -9,7 +9,9 @@ export class Admin extends PureComponent {
     super();
     this.state = {
       email: "",
-      password: ""
+      password: "",
+      success: false,
+      error: false
     };
     this.handleLogIn = this.handleLogIn.bind(this);
     this.handlePasswordChange = this.handlePasswordChange.bind(this);
@@ -24,7 +26,10 @@ export class Admin extends PureComponent {
       email: this.state.email,
       password: this.state.password
     };
-    this.props.logInUser(userData);
+    this.props
+      .logInUser(userData)
+      .then(() => this.setState({ success: true, error: false }))
+      .catch(err => this.setState({ error: true, success: false }));
   }
 
   handleUserNameChange(e) {
@@ -46,6 +51,20 @@ export class Admin extends PureComponent {
       <div className="registerWrapper">
         <div className="card">
           <div className="content card-custom-top">
+            {this.state.success && (
+              <div className="field is-horizontal">
+                <div className="field-label is-normal span_placement registerWrapper-success">
+                  <span>Successfully Added</span>
+                </div>
+              </div>
+            )}
+            {this.state.error && (
+              <div className="field is-horizontal">
+                <div className="field-label is-normal span_placement registerWrapper-error">
+                  <span>Failed to Add</span>
+                </div>
+              </div>
+            )}
             <div className="field is-horizontal">
               <div className="field-label is-normal">
                 <label className="label">Email</label>

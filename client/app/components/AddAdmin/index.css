@@ -23,12 +23,18 @@
 	display: unset;
 }
 .login_btn {
-    width: 46% !important;
-    margin: auto !important;
-    display: block !important;
+	width: 46% !important;
+	margin: auto !important;
+	display: block !important;
 }
 .span_placement {
 	text-align: center !important;
 	color: green;
-    font-weight: bold;
+	font-weight: bold;
+}
+.registerWrapper-success {
+	color: green;
+}
+.registerwrapper-error: {
+	color: red;
 }

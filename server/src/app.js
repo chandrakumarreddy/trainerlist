@@ -86,7 +86,6 @@ app.get("/confirmation_mail/:id", (req, res) => {
 });
 
 app.get("*", (req, res) => {
-  console.log(path.join(__dirname, "../public", "index.html"));
   return res.sendFile(path.join(__dirname, "../public", "index.html"));
 });
 

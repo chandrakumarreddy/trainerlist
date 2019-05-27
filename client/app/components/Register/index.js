@@ -12,7 +12,8 @@ export class Register extends PureComponent {
       phone: "",
       designation: "",
       email: "",
-      domain: ""
+      domain: "",
+      error: false
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -30,13 +31,20 @@ export class Register extends PureComponent {
     this.props
       .register(this.state)
       .then(() => this.props.history.push("/"))
-      .catch(err => console.log(err));
+      .catch(err => this.setState({ error: true }));
   }
 
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
         <div className="updateProfileContainer">
+          {this.state.error && (
+            <div className="field is-horizontal">
+              <div className="field-label is-normal span_placement registerWrapper-error">
+                <span>Failed to Add</span>
+              </div>
+            </div>
+          )}
           <div className="columns is-mobile">
             <div className="column">
               <div className="editors row-split">

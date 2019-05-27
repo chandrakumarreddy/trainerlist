@@ -22,6 +22,7 @@ export class UpdateProfile extends PureComponent {
         dob: ""
       }
     };
+    this.formData = new FormData();
     this.photo = React.createRef();
     this.certifications = React.createRef();
     this.handleChange = this.handleChange.bind(this);
@@ -46,24 +47,25 @@ export class UpdateProfile extends PureComponent {
 
   handleSubmit(e) {
     e.preventDefault();
-    // let cert_files = this.certifications.current.files;
-    // const certifications = [];
-    // for (let key in cert_files) {
-    //   if (cert_files[key].type) {
-    //     certifications.push(cert_files[key]);
-    //   }
-    // }
-    // const fd = new FormData(this.state.persons);
-    // fd.append("photo", this.photo.current.files[0]);
-    // fd.append("certifications", certifications);
+    const cert_files = Array.from(this.certifications.current.files);
+    let certs = [];
+    cert_files.forEach((file, i) => {
+      certs.push(file);
+    });
+    this.formData.append("photo", this.photo.current.files[0]);
+    this.formData.append("certification", certs[0]);
+    this.formData.append("name", this.state.persons.name);
+    this.formData.append("age", this.state.persons.age);
+    this.formData.append("phone", this.state.persons.phone);
+    this.formData.append("designation", this.state.persons.designation);
+    this.formData.append("department", this.state.persons.department);
+    this.formData.append("deleveries", this.state.persons.deleveries);
+    this.formData.append("location", this.state.persons.location);
+    this.formData.append("experience", this.state.persons.experience);
+    this.formData.append("technologies", this.state.persons.technologies);
+    this.formData.append("dob", this.state.persons.dob);
     this.props
-      .update(
-        this.props.match.params.id,
-        Object.assign({}, this.state.persons, {
-          deleveries: this.state.persons.deleveries,
-          technologies: this.state.persons.technologies
-        })
-      )
+      .update(this.props.match.params.id, this.formData)
       .then(() => this.props.history.push("/profile"));
   }
 
