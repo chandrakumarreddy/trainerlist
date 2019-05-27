@@ -19,24 +19,16 @@ module.exports = {
 
   async update(req, res) {
     try {
-      // const user = await User.findOneAndUpdate(
-      //   { _id: req.params.id },
-      //   {
-      //     $set: Object.assign({}, req.body, {
-      //       photo: req.files.photo.map(item => item.filename)[0],
-      //       certification: req.files.certification.map(item => item.filename)
-      //     })
-      //   },
-      //   { returnNewDocument: true }
-      // );
       const user = await User.findOneAndUpdate(
         { _id: req.params.id },
         {
-          $set: req.body
+          $set: Object.assign({}, req.body, {
+            photo: req.files.photo[0].filename,
+            certification: req.files.certification[0].filename
+          })
         },
         { new: true }
       );
-      console.log("user after", user);
       if (user) {
         return res.status(204).json({
           message: "updated"

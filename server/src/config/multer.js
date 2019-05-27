@@ -28,9 +28,7 @@ module.exports = (multer, path) => {
 	};
 	return multer({
 		storage: storage,
-		limits: {
-			fileSize: 1024 * 1024 * 5
-		},
+
 		fileFilter: fileFilter
 	});
 };

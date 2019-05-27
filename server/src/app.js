@@ -22,7 +22,8 @@ const express = require("express"),
 
 connect();
 
-app.use(express.static("src/uploads"));
+app.use(express.static("public"));
+app.use("/uploads", express.static("src/uploads"));
 app.use(express.json());
 app.use(cors());
 
@@ -51,7 +52,6 @@ app.route("/register").post(
 );
 app
   .route("/register/:id")
-
   .patch(
     upload.fields([
       {
@@ -83,6 +83,11 @@ app.route("/signin").post((req, res) => {
 
 app.get("/confirmation_mail/:id", (req, res) => {
   return res.redirect("http://localhost:8080");
+});
+
+app.get("*", (req, res) => {
+  console.log(path.join(__dirname, "../public", "index.html"));
+  return res.sendFile(path.join(__dirname, "../public", "index.html"));
 });
 
 app.listen(PORT, () => console.log(`server is listening at ${PORT}`));
